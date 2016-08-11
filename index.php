@@ -1,11 +1,11 @@
 <?php
 	$from_currency    = 'USD';
-    $to_currency    = 'JPY';
+	$to_currency    = 'JPY';
 	$amount            = 1;
-    $results = converCurrency($from_currency,$to_currency,$amount);
-    $regularExpression     = '#\<span class=bld\>(.+?)\<\/span\>#s';
-    preg_match($regularExpression, $results, $finalData);
-    echo $finalData[0];
+	$results = converCurrency($from_currency,$to_currency,$amount);
+	$regularExpression     = '#\<span class=bld\>(.+?)\<\/span\>#s';
+	preg_match($regularExpression, $results, $finalData);
+	echo $finalData[0];
 
 	function converCurrency($from,$to,$amount){
 		$url = "http://www.google.com/finance/converter?a=$amount&from=$from&to=$to";
